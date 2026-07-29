@@ -6,6 +6,68 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+## [v1.11.1](https://github.com/Duke1616/ecmdb/releases/tag/v1.11.1) - 2026-07-18
+
+- [`630415a`](https://github.com/Duke1616/ecmdb/commit/630415a3ce273b1bcc9e2e0d7663535666f85e26) chore: 优化配置
+- [`118f137`](https://github.com/Duke1616/ecmdb/commit/118f137073dbe8d71225af41d02bc0d5885a212e) chore: 完善配置
+- [`5ab504b`](https://github.com/Duke1616/ecmdb/commit/5ab504b7af113fcac866886b437b839162b14ae9) chore: 增增 id
+- [`eb65022`](https://github.com/Duke1616/ecmdb/commit/eb65022f13ea6d3fb4d33d7f4c28c60bb5c35696) chore: 1
+- [`aec7ca3`](https://github.com/Duke1616/ecmdb/commit/aec7ca3f4fc5b2aadfe91b6228e7305b2b1121f5) chore: 禁止缓存 UMD 文件
+- [`ae0e3ce`](https://github.com/Duke1616/ecmdb/commit/ae0e3ce8c5f4237108eee66f3a09e6837c214e4b) chore: 删除无用 UI 定义，新增 Permission 定义
+- [`70a58ba`](https://github.com/Duke1616/ecmdb/commit/70a58ba84353c8d3e50e0939f572b75ae402d155) chore: nginx 添加 plugin-runtime 单独路由，增加超时时间
+- [`fa51474`](https://github.com/Duke1616/ecmdb/commit/fa51474724d887d3328b244778f3d872e0f6e53d) chore: 修改权限 code
+- [`bdbaaed`](https://github.com/Duke1616/ecmdb/commit/bdbaaed09e3490f941ccd1750b58258cef719620) chore: 完善权限
+- [`67dbf9a`](https://github.com/Duke1616/ecmdb/commit/67dbf9ae4d29263770a86f06486af84bc9b4c63a) chore: 版本控制
+- [`b555cb3`](https://github.com/Duke1616/ecmdb/commit/b555cb32a07c2a2b9c54437e9e61c7f7f79a78a4) chore: 优化去除无用的字段
+- [`4423c52`](https://github.com/Duke1616/ecmdb/commit/4423c526767e9836928706ec40c6131dd455518f) chore: 去除 plugin 录入，自动绑定
+- [`6ede114`](https://github.com/Duke1616/ecmdb/commit/6ede11407221a5848a61c9730daef94c13d243a6) fix: 地址添加错误
+- [`74a3ae6`](https://github.com/Duke1616/ecmdb/commit/74a3ae6fbf8ffb9c9855f39571523c8bf11a4ef1) chore: 添加 pulgin 插件启动
+- [`10107d3`](https://github.com/Duke1616/ecmdb/commit/10107d31af9ba3d603cc38649d3ded53f47cd5d4) chore: 完善 ecmdb plugin 逻辑
+- [`b492e5b`](https://github.com/Duke1616/ecmdb/commit/b492e5b24b1c40ad57c44cd57f4ca7a307f62fe8) fix: 打包错误
+- [`2fc1c67`](https://github.com/Duke1616/ecmdb/commit/2fc1c67b681b011a15e7e14ba55c3feddadf19f8) chore: 完善 ecmdb plugin 设计, ssh 实现拆分独立仓库
+- [`fcfdf61`](https://github.com/Duke1616/ecmdb/commit/fcfdf6192c5177e3e8e6eaab258946eb9d10589e) chore: 调整 README.md 里面的 img
+- [`497698d`](https://github.com/Duke1616/ecmdb/commit/497698d6e89428f379d91b381079b4547e3b023c) chore: 去除 eiam rpc 依赖
+- [`382b184`](https://github.com/Duke1616/ecmdb/commit/382b1840141ebbf96e38a5865f5633b7c20c2822) Merge pull request #14 from Duke1616/feature/iam-integration
+- [`a9227cd`](https://github.com/Duke1616/ecmdb/commit/a9227cd7209594950181375ea52f2bf6a8ae2e77) chore: handler 整理
+- [`339558f`](https://github.com/Duke1616/ecmdb/commit/339558f9c6ff1dca998b5b516291844eb662d839) chore: 完善 cmdb plugin 能力
+- [`0ce5cad`](https://github.com/Duke1616/ecmdb/commit/0ce5cadd45e4ecb1073f12195f83cee40adaec61) chore: 简化设计
+- [`3a6dfd8`](https://github.com/Duke1616/ecmdb/commit/3a6dfd8e0de1e25b326ae5f1abad37cce1d384b5) chore: cmdb 插件中心
+- [`ec788ce`](https://github.com/Duke1616/ecmdb/commit/ec788ce40f7d596c1f6cbaa3ebad91df9e13f452) chore: cmdb 支持插件功能
+- [`c0c590d`](https://github.com/Duke1616/ecmdb/commit/c0c590de27a6712fad4bb8f8522041924e733ac8) chore: 升级 eiam 版本，避免同步自增 ID 问题
+- [`692cf4c`](https://github.com/Duke1616/ecmdb/commit/692cf4cbcea03041723d8fe12a1e54f1688081e6) chore: 配置文件同步
+- [`e52e9c5`](https://github.com/Duke1616/ecmdb/commit/e52e9c58be41da6435571f8701b5bd363ab55f72) chore: 完善逻辑
+- [`f1eb6f0`](https://github.com/Duke1616/ecmdb/commit/f1eb6f01af7ce3d1ee98740783210613dad6f4e8) fix: 修复空的时候查询错误
+- [`7d53726`](https://github.com/Duke1616/ecmdb/commit/7d537262bff2776c7b3c8f9c220d60a63303b9da) chore: 优化后端结构返回
+- [`574158a`](https://github.com/Duke1616/ecmdb/commit/574158a62641282de0299153ad82780d968792e2) fix: 修复 index 字段传递i
+- [`8888e9c`](https://github.com/Duke1616/ecmdb/commit/8888e9cc163d7bfc053f6623ab193d03f3b87370) chore: mysql
+- [`dbc36cf`](https://github.com/Duke1616/ecmdb/commit/dbc36cf634982bfe4b1d4ed6bb4c35692b5c9eeb) chore: 同步配置文件
+- [`b48a4dd`](https://github.com/Duke1616/ecmdb/commit/b48a4ddd170b8de993a2b574043d64c69115a0e6) chore: 删除依赖， init 失败
+- [`e06b0f0`](https://github.com/Duke1616/ecmdb/commit/e06b0f0e37558e815859827529f3f83bf79c00a4) chore: 配置文件配置正确 migrate 源
+- [`70c4ebe`](https://github.com/Duke1616/ecmdb/commit/70c4ebedd53b4b459d3e8a2b50a37cfda91dbd35) chore: 完善配置文件
+- [`0a01e07`](https://github.com/Duke1616/ecmdb/commit/0a01e075ad1c52d9b70da591a3f4c466ceaaab4c) chore: db init
+- [`fd2372b`](https://github.com/Duke1616/ecmdb/commit/fd2372b45ae754af0e594cc0af64780120513ba2) chore: db init
+- [`bc8846b`](https://github.com/Duke1616/ecmdb/commit/bc8846b74aae7722af2d0311ca15592c48f79307) chore: 修正 docker entiypoint
+- [`578617b`](https://github.com/Duke1616/ecmdb/commit/578617b1a3c10a679bb15c998d01d0ac4fef3e28) chore: 配置文件修正
+- [`d901e5b`](https://github.com/Duke1616/ecmdb/commit/d901e5b9695448f45b4d32cf43d6db52de9644a2) chore: 统一启动方式
+- [`3da720f`](https://github.com/Duke1616/ecmdb/commit/3da720f40f6b881ce19718deadac81aa8ec5d0f7) chore: 数据库初始化
+- [`ace7ee7`](https://github.com/Duke1616/ecmdb/commit/ace7ee748842df1f94ba700967928c4cd449b95c) chore: 同步配置
+- [`28b95b9`](https://github.com/Duke1616/ecmdb/commit/28b95b912eb3ecaca0ba2f5588a41fe452a4a48b) chore: 同步配置
+- [`5f66f19`](https://github.com/Duke1616/ecmdb/commit/5f66f1914ec1a596dfc1fb2c6d2f60a1975b5a7d) chore: github action 调用
+- [`2ec3854`](https://github.com/Duke1616/ecmdb/commit/2ec3854babcdea003f1180b8865a1ec42b191e09) chore: 删除已经迁移的模块，重构目录结构
+- [`efb20cb`](https://github.com/Duke1616/ecmdb/commit/efb20cb3b0503e1fc75eafc3d2a661b421f94197) chore: 升级 eiam 版本
+- [`10ad82f`](https://github.com/Duke1616/ecmdb/commit/10ad82faf15fa339c64a37d525d4554a5cdad98e) chore: web 层能力完善
+- [`b1963bc`](https://github.com/Duke1616/ecmdb/commit/b1963bc6f66c4d4dadaf976ad14a54da6c9f45be) chore: cmdb 模块的数据租户迁移
+- [`55bbf39`](https://github.com/Duke1616/ecmdb/commit/55bbf3912a9485f0d7ed168bcab2c07a0c74ade6) chore: relation 模块优化
+- [`8025118`](https://github.com/Duke1616/ecmdb/commit/8025118c9a79345156dc02b8f1594a55b788726b) chore: cmdb 模块集成 eiam 权限
+- [`bf9baec`](https://github.com/Duke1616/ecmdb/commit/bf9baec864ee6e0eef89da6d9214ab830b749184) chore: 优化代码
+- [`a17a160`](https://github.com/Duke1616/ecmdb/commit/a17a160550a2b0b7ae7c558290a752f70ddb62bc) chore: mongox 封装，替换 cmdb 的使用
+- [`7021cfd`](https://github.com/Duke1616/ecmdb/commit/7021cfd6e80bf10ca9c1fa033c302ee7eb8b74d1) fix: 升级 etask 版本，解决 biz_id 覆盖问题
+- [`e2083d9`](https://github.com/Duke1616/ecmdb/commit/e2083d908bdf6558b4f0343f669ff72e3b045187) fix: 升级 etask 版本，解决 biz_id 覆盖问题
+- [`d2fe858`](https://github.com/Duke1616/ecmdb/commit/d2fe858f8ae70f55cf0e1223ac2d55fba90088cd) fix: biz id 传递
+- [`d3c5278`](https://github.com/Duke1616/ecmdb/commit/d3c52787940aa4561370b933c288b0b1e6be8e25) chore: 注入 metadata 验证效果
+- [`33067f0`](https://github.com/Duke1616/ecmdb/commit/33067f0b2cc01bd3327337a833e5659d3b014a2b) fix: 升级 etask 版本，处理 biz_id 未传递问题
+- [`f29646a`](https://github.com/Duke1616/ecmdb/commit/f29646a394987227857d049d0cfc5fcd5818c42b) chore: 同步菜单
+
 ## [v1.11.0](https://github.com/Duke1616/ecmdb/releases/tag/v1.11.0) - 2026-03-31
 
 - [`6e1fe7c`](https://github.com/Duke1616/ecmdb/commit/6e1fe7c71113e90cabe89f633e26392e19c8896d) chore: 同步最新菜单
