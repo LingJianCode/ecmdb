@@ -26,16 +26,21 @@ func NewHandler(svc service.Service) *Handler {
 	}
 }
 
+func (h *Handler) PublicRoutes(server *gin.Engine) {
+	g := server.Group("/api/tools")
+	g.GET("/download/:filename", h.Download)
+}
+
 func (h *Handler) PrivateRoutes(server *gin.Engine) {
 	g := server.Group("/api/tools")
 	g.POST("/upload", h.Capability("文件上传", "upload").
-		Needs("cmdb:tools:put_presigned_url").
 		Handle(h.Upload),
 	)
-	g.GET("/download/:filename", h.Capability("文件下载", "download").
-		Needs("cmdb:tools:get_presigned_url").
-		Handle(h.Download),
-	)
+
+	//g.GET("/download/:filename", h.Capability("文件下载", "download").
+	//	Needs("cmdb:tools:get_presigned_url").
+	//	Handle(h.Download),
+	//)
 
 	g.POST("/minio/get_presigned_url", h.Capability("获取下载预签名", "get_presigned_url").
 		NoSync().

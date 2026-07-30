@@ -45,6 +45,7 @@ func (h *Handler) PrivateRoutes(server *gin.Engine) {
 
 	// 创建资产
 	g.POST("/create", h.Capability("创建资产", "add").
+		Needs("cmdb:tools:put_presigned_url").
 		Handle(ginx.WrapBody[CreateResourceReq](h.CreateResource)),
 	)
 
@@ -55,7 +56,7 @@ func (h *Handler) PrivateRoutes(server *gin.Engine) {
 
 	// 根据模型 UID 查询资产列表
 	g.POST("/list", h.Capability("资产列表", "view").
-		Needs("cmdb:model:view", "cmdb:attribute:view", "cmdb:plugin:actions").
+		Needs("cmdb:model:view", "cmdb:attribute:view", "cmdb:tools:get_presigned_url", "cmdb:plugin:actions").
 		Handle(ginx.WrapBody[ListResourceReq](h.ListResource)),
 	)
 
@@ -66,6 +67,7 @@ func (h *Handler) PrivateRoutes(server *gin.Engine) {
 
 	// 修改资产信息
 	g.POST("/update", h.Capability("修改资产", "edit").
+		Needs("cmdb:tools:put_presigned_url").
 		Handle(ginx.WrapBody[UpdateResourceReq](h.UpdateResource)),
 	)
 
