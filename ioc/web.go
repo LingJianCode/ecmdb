@@ -34,6 +34,7 @@ func InitWebServer(mdls []gin.HandlerFunc, sdk *sdk.SDK, syncer capability.Synce
 
 	// 不需要登录认证鉴权的路由
 	pluginHdl.PublicRoutes(server.Engine)
+	toolsHdl.PrivateRoutes(server.Engine)
 
 	// 登录检查
 	server.Use(sdk.CheckLogin())
@@ -47,7 +48,7 @@ func InitWebServer(mdls []gin.HandlerFunc, sdk *sdk.SDK, syncer capability.Synce
 	resourceHdl.PrivateRoutes(server.Engine)
 	rmHdl.PrivateRoute(server.Engine)
 	pluginHdl.PrivateRoutes(server.Engine)
-	toolsHdl.PrivateRoutes(server.Engine)
+	//toolsHdl.PrivateRoutes(server.Engine)
 	dataIOHdl.PrivateRoutes(server.Engine)
 
 	// 异步启动 EIAM 资产注册控制器

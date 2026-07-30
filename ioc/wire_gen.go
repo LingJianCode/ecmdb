@@ -18,9 +18,9 @@ import (
 	service2 "github.com/Duke1616/ecmdb/internal/service/resource"
 	service5 "github.com/Duke1616/ecmdb/internal/service/tools"
 	web2 "github.com/Duke1616/ecmdb/internal/web/attribute"
-	web7 "github.com/Duke1616/ecmdb/internal/web/dataio"
+	web6 "github.com/Duke1616/ecmdb/internal/web/dataio"
 	"github.com/Duke1616/ecmdb/internal/web/model"
-	web8 "github.com/Duke1616/ecmdb/internal/web/plugin"
+	web7 "github.com/Duke1616/ecmdb/internal/web/plugin"
 	web4 "github.com/Duke1616/ecmdb/internal/web/relation"
 	web3 "github.com/Duke1616/ecmdb/internal/web/resource"
 	web5 "github.com/Duke1616/ecmdb/internal/web/tools"
@@ -79,12 +79,12 @@ func InitApp() (*App, error) {
 	s3Storage := storage.NewS3Storage(client)
 	service9 := service5.NewService(s3Storage)
 	handler3 := web5.NewHandler(service9)
+	iDataIOService := service6.NewService(serviceService, service7, service8)
+	handler4 := web6.NewHandler(iDataIOService, s3Storage)
 	pluginDAO := dao.NewPluginDAO(db)
 	pluginRepository := repository.NewPluginRepository(pluginDAO)
 	pluginService := plugin.NewService(pluginRepository, service7, relationResourceService, service8, mgService, serviceService, relationTypeService, relationModelService)
-	iDataIOService := service6.NewService(serviceService, service7, service8)
-	handler4 := web7.NewHandler(iDataIOService, s3Storage)
-	handler5 := web8.NewHandler(pluginService)
+	handler5 := web7.NewHandler(pluginService)
 	listener := InitListener()
 	component := InitWebServer(v, sdk, syncer, v2, handler, webHandler, handler2, relationTypeHandler, handler3, handler4, handler5, listener)
 	clientv3Client := InitEtcdClient()
