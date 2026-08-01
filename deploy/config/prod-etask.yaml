@@ -159,6 +159,10 @@ compensator:
   interrupt:
     batchSize: 100
     minDuration: 1000000000
+  # 终止信号：手动停止任务
+  termination:
+    batchSize: 100
+    minDuration: 1000000000
 
 migration:
   source:
