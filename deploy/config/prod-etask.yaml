@@ -102,7 +102,7 @@ agent:
 # 执行节点集群配置
 executor:
   # 节点实例 ID。
-  # 优先级：环境变量 EXECUTOR_NODE_ID > 此处配置 (executor.id) > grpc.server.executor.id。
+  # 优先级：EXECUTOR_NODE_ID > executor.id > grpc.server.executor.id。
   # 注意：系统会自动将其格式化为 {serviceName}:{id}，如 "etask:node-01"，以确保跨服务唯一。
   id: "node-01"
   # 任务执行模式：
@@ -138,42 +138,40 @@ etcd:
 
 # 调度引擎核心参数
 scheduler:
-  # 批量获取任务的超时时间（纳秒）
-  batchTimeout: 3000000000
+  # 批量获取任务的超时时间
+  batch_timeout: 3s
   # 每次调度循环扫描的最大任务数
-  batchSize: 100
-  # 任务抢占超时时间（纳秒）
-  preemptedTimeout: 600000000000
-  # 核心调度循环间隔（纳秒）
-  scheduleInterval: 10000000000
-  # 任务续约间隔（纳秒）
-  renewInterval: 5000000000
+  batch_size: 100
+  # 任务抢占超时时间
+  preempted_timeout: 10m
+  # 核心调度循环间隔
+  schedule_interval: 10s
+  # 任务续约间隔
+  renew_interval: 5s
   # 单个 Scheduler 节点允许同时发起的最大执行调用数
-  maxConcurrentTasks: 1000
-  # 任务执行令牌获取超时时间（纳秒）
-  tokenAcquireTimeout: 3000000000
+  max_concurrent_tasks: 1000
+  # 任务执行令牌获取超时时间
+  token_acquire_timeout: 3s
 
 
 # 补偿机制相关配置
 compensator:
   # 重试补偿：处理执行失败的任务
   retry:
-    maxRetryCount: 3 # 最大重试次数
-    prepareTimeoutWindowMs: 10000000000 # 准备阶段的超时窗口
-    batchSize: 100 # 单次补偿扫描的任务量
-    minDuration: 1000000000 # 两次补偿执行的最小间隔
+    batch_size: 100 # 单次补偿扫描的任务量
+    min_duration: 1s # 两次补偿执行的最小间隔
   # 重新调度补偿：处理抢占成功但节点宕机未运行的任务
   reschedule:
-    batchSize: 100
-    minDuration: 1000000000
+    batch_size: 100
+    min_duration: 1s
   # 中断补偿：处理需要强行终止的任务
   interrupt:
-    batchSize: 100
-    minDuration: 1000000000
+    batch_size: 100
+    min_duration: 1s
   # 终止信号：手动停止任务
   termination:
-    batchSize: 100
-    minDuration: 1000000000
+    batch_size: 100
+    min_duration: 1s
 
 migration:
   source:

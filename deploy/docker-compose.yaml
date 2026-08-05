@@ -171,6 +171,7 @@ services:
     command: ./etask server --mode all
     environment:
       - TZ=Asia/Shanghai
+      - EXECUTOR_NODE_ID=${EXECUTOR_NODE_ID:-}
     volumes:
       - ./config/prod-etask.yaml:/app/config/config.yaml
       - /usr/share/zoneinfo/Asia/Shanghai:/usr/share/zoneinfo/Asia/Shanghai
