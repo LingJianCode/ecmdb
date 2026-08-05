@@ -69,6 +69,11 @@ artifact_cache:
 runtime:
   workspace_dir: "/tmp/etask/runs"
   workspace_max_age: 24h
+  # root 运行时自动将脚本降权；required 可用于强制生产节点校验。
+  sandbox:
+    mode: auto
+    uid: 65534
+    gid: 65534
   max_code_size: "4MB"
   max_args_size: "1MB"
   max_variables_size: "1MB"
@@ -133,15 +138,21 @@ etcd:
 
 # 调度引擎核心参数
 scheduler:
-  batchTimeout: 3000000000 # 批量获取任务的超时时间 (纳秒, 3s)
-  batchSize: 100 # 每次调度扫描任务的最大数量
-  preemptedTimeout: 600000000000 # 抢占超时时间 (纳秒, 10m)，超过此时间未执行则重新触发
-  scheduleInterval: 10000000000 # 核心调度循环间隔 (纳秒, 10s)
-  renewInterval: 5000000000 # 任务续约间隔 (纳秒, 5s)
-  maxConcurrentTasks: 1000 # 节点支持的最大并发执行任务数
-  tokenAcquireTimeout: 3000000000 # 令牌获取超时 (纳秒, 3s)
-  pollInterval: 1000000000 # 轮询间隔 (纳秒, 1s)
-  reportTimeout: 10000000000 # 状态上报超时 (纳秒, 10s)
+  # 批量获取任务的超时时间（纳秒）
+  batchTimeout: 3000000000
+  # 每次调度循环扫描的最大任务数
+  batchSize: 100
+  # 任务抢占超时时间（纳秒）
+  preemptedTimeout: 600000000000
+  # 核心调度循环间隔（纳秒）
+  scheduleInterval: 10000000000
+  # 任务续约间隔（纳秒）
+  renewInterval: 5000000000
+  # 单个 Scheduler 节点允许同时发起的最大执行调用数
+  maxConcurrentTasks: 1000
+  # 任务执行令牌获取超时时间（纳秒）
+  tokenAcquireTimeout: 3000000000
+
 
 # 补偿机制相关配置
 compensator:
