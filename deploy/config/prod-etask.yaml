@@ -69,6 +69,28 @@ artifact_cache:
 runtime:
   workspace_dir: "/tmp/etask/runs"
   workspace_max_age: 24h
+  shell:
+    enabled: true
+    binary: "/bin/bash"
+  python:
+    enabled: true
+    binary: "python"
+  ansible:
+    enabled: true
+    binary: "ansible-playbook"
+    # 密码凭据依赖该命令；默认值为 sshpass。
+    # sshpass_binary: "sshpass"
+    # credential_root: "/run/credentials/etask-ansible"
+    # known_hosts_file: "/etc/etask/ssh/known_hosts"
+    # credentials:
+    #   production-linux:
+    #     type: "private_key"
+    #     username: "etask"
+    #     private_key_file: "production-linux-key"
+    #   legacy-linux:
+    #     type: "password"
+    #     username: "root"
+    #     password_file: "legacy-linux-password"
   # root 运行时自动将脚本降权；required 可用于强制生产节点校验。
   sandbox:
     mode: auto

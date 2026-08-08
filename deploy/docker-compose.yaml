@@ -175,6 +175,9 @@ services:
     volumes:
       - ./config/prod-etask.yaml:/app/config/config.yaml
       - /usr/share/zoneinfo/Asia/Shanghai:/usr/share/zoneinfo/Asia/Shanghai
+      # 启用 Agent 本地 SSH 凭据后，取消注释并确保宿主机凭据文件权限为 0600。
+      # - ./secrets/ansible:/run/credentials/etask-ansible:ro
+      # - ./ssh/known_hosts:/etc/etask/ssh/known_hosts:ro
     depends_on:
       - mysql
       - kafka
