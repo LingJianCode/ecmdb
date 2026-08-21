@@ -9,7 +9,6 @@ import (
 	"github.com/Duke1616/ecmdb/cmd/initial/incr"
 	v150 "github.com/Duke1616/ecmdb/cmd/initial/incr/v1.5.0"
 	v192 "github.com/Duke1616/ecmdb/cmd/initial/incr/v1.9.2"
-	v193 "github.com/Duke1616/ecmdb/cmd/initial/incr/v1.9.3"
 	v194 "github.com/Duke1616/ecmdb/cmd/initial/incr/v1.9.4"
 	v195 "github.com/Duke1616/ecmdb/cmd/initial/incr/v1.9.5"
 	"github.com/Duke1616/ecmdb/cmd/initial/incr/version"
@@ -34,7 +33,6 @@ func registerIncr(incr incr.InitialIncr) {
 func RegisterIncr(app *ioc.App) {
 	registerIncr(v150.NewIncrV150(app))
 	registerIncr(v192.NewIncrV192(app))
-	registerIncr(v193.NewIncrV193(app))
 	registerIncr(v194.NewIncrV194(app))
 	registerIncr(v195.NewIncrV195(app))
 }
